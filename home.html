@@ -28,14 +28,14 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-    <link rel="stylesheet" href="./styles/style.css">
+    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
 
 </head>
 
@@ -50,36 +50,27 @@
     <!-- the body of your page goes here -->
     <!-- stuff -->
     <div class="container">
-        <h1><span id="hikeName">this hike</span></h1>
-        <div class="position-relative">
-            <img class="hike-img responsive" src="" alt="Hike photo">
-            <button class="btn btn-primary position-absolute bottom-0 end-0 m-3"
-                onclick="saveHikeDocumentIDAndRedirect()">Write Review</button>
-        </div>
-    </div>
-
-    <div class="container">
         <h2>Reviews:</h2>
         <div id="details-go-here"></div>
         <!-- Here is container for cards  -->
         <div class="container">
-            <div id="reviewCardGroup" class="row row-cols-auto">
+            <div id="savedCardGroup" class="row row-cols-auto">
             </div>
         </div>
     </div>
 
-    <template id="reviewCardTemplate">
+    <template id="savedCardTemplate">
         <div class="card bg-secondary">
             <img class="card-img-top">
             <div class="card-body bg-light">
                 <p class="time">placeholder</p>
-                <img class = "image" src>
+                <img class="card-img-top image">
                 <br>
-                <p class="description">This card has supporting text below as a natural lead-in to additional content.
+                <p class="card-text description">This card has supporting text below as a natural lead-in to additional content.
                 </p>
             </div>
         </div>
-    </template>
+    </template>    
 
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
@@ -89,7 +80,8 @@
     <!---------------------------------------------->
     <script src="./scripts/firebaseAPI_TEAM09.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/eachHike.js"></script>
+    <script src="./scripts/home.js"></script>
+    <!-- <script src="./scripts/script.js"></script> -->
 
 </body>
 
