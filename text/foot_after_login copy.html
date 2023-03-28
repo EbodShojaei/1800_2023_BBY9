@@ -1,0 +1,40 @@
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Search Routes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="searchForm">
+                    <div class="results-container">
+                        <ul class="results-list" id="list">
+
+                        </ul>
+                    </div>
+                    <div class="form-container">
+                        <form class="form">
+                            <input id="search" type="text" class="input" placeholder="search..." autocomplete="off" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="navbar justify-content-evenly bg-info fixed-bottom">
+    <div class="container py-3">
+        <a class="nav-link" href="../home.html"><i class="material-icons">home</i></a> <!-- icon to view homefeed -->
+
+        <!-- click search icon to initialize modal box  -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchModal">
+            <i class="material-icons">search</i> <!-- icon to prompt search -->
+        </button>
+
+        <i class="material-icons">library_add</i> <!-- icon to upload post -->
+        <a class="nav-link" href="../saved.html"><i class="material-icons">favorite</i></a> <!-- icon to view favorites -->
+    </div>
+</footer>
+
+<script src="./scripts/search.js"></script>

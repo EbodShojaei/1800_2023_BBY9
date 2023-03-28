@@ -36,6 +36,8 @@
     <!-------------------------------------------->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+    <link type="text/css" rel="stylesheet" href="./styles/stylemain.css">
+    <link type="text/css" rel="stylesheet" href="./styles/navSearchStyle.css">
 
 </head>
 
@@ -52,24 +54,23 @@
     <div class="container-fluid bg-light text-dark p-5">
         <div class="container bg-light p-5">
             <h1 class="display-4">
-                Good morning, <span id="name-goes-here">Name</span>
+                Hello, <span id="name-goes-here">Name</span>
             </h1>
             <hr />
-            <p>Quote of the day:<span id="quote-goes-here"></span></p>
         </div>
     </div>
 
     <div class="container">
-        <h1>Some popular hikes</h1>
+        <h1>Some popular stops</h1>
         <!-- Here is the container for cards  -->
         <div class="container">
-            <div id="hikes-go-here" class="row row-cols-auto">
+            <div id="stops-go-here" class="row row-cols-auto">
             </div>
         </div>
     </div>
 
     <!-- Templates for general use, not displayed -->
-    <template id="hikeCardTemplate">
+    <template id="stopCardTemplate">
         <div class="card py-2 mx-2" style="width: 18rem">
             <img class="card-image card-img-top" src=" ..." alt="..." />
             <div class="card-body">
@@ -80,7 +81,7 @@
                     Some quick example text to build on the card title and make up the
                     bulk of the card's content.
                 </p>
-                <a class="btn btn-primary card-href">Read more ...</a>
+                <a class="btn btn-primary card-href">View Updates</a>
                 <i class="material-icons">bookmark_border</i>
             </div>
         </div>

@@ -1,0 +1,87 @@
+<!-- search modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchLabel">Search Routes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="searchForm">
+                    <div class="results-container">
+                        <ul class="results-list" id="list">
+
+                        </ul>
+                    </div>
+                    <div class="form-container">
+                        <form class="form">
+                            <input id="search" type="text" class="input" placeholder="search..." autocomplete="off" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- update modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateLabel">Post Update</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="dropdown">
+                        <button onclick="toggleSearch()" class="dropbtn">Dropdown</button>
+                        <div id="searchDropdown" class="dropdown-content">
+                          <input type="text" placeholder="search..." class="input">
+                          <div class="results-container">
+                            <ul class="results-list" id="updateList">
+    
+                            </ul>
+                        </div>
+                          
+                        </div>
+                      </div> 
+                    <form>
+                        <!-- Container for uploading a photo -->
+                        <div class="container py-3">
+                            <input type="file" id="mypic-input" accept="image/*" />
+                            <img id="mypic-goes-here" width=100 height=100 />
+                        </div>
+                            <div class="form-group">
+                                <textarea class="form-control" id="description" rows="3"></textarea>
+                            </div>
+                            <br>
+                            <br>     
+                            <br>
+                            <div class="d-flex justify-content-end">
+                                <button type="button" class="btn btn-lg btn-primary pull-right" onclick="postUpdate()">Submit</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="navbar justify-content-evenly bg-info fixed-bottom">
+    <div class="container py-3">
+        <a class="nav-link" href="../home.html"><i class="material-icons">home</i></a> <!-- icon to view homefeed -->
+
+        <!-- click search icon to initialize modal box  -->
+        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#searchModal">
+            <i class="material-icons">search</i> <!-- icon to prompt search -->
+        </button>
+
+        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#updateModal">
+            <i class="material-icons">library_add</i> <!-- icon to upload post -->
+        </button>
+        <a class="nav-link" href="../saved.html"><i class="material-icons">favorite</i></a> <!-- icon to view favorites -->
+    </div>
+</footer>
+
+<script src="./scripts/search.js"></script>

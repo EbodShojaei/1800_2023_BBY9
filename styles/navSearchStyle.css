@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul>li {
+    padding-top: 10px;
+}
+
+.form {
+    position: fixed;
+    top: 90%;
+}
+
+#list {
+    position: fixed;
+    top: 30%;
+}
+
+#search {
+    border-color: transparent;
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    position: relative;
+    bottom: 10px;
+    background: #f1f1f1;
+    width: 400px;
+}
+
+.modal-content {
+    width: 434px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    border: 1px solid #ddd;
+    z-index: 1;
+  }
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+.btn, .btn:hover, .btn:focus, .btn:active {
+    outline: none !important;
+    box-shadow: none;
+}
+
+.material-icons {
+    color: #0d6efd;
+}
+
+.material-icons:hover {
+    color: goldenrod;
+}
+

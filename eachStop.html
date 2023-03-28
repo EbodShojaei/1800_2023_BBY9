@@ -34,8 +34,10 @@
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
+    <link type="text/css" rel="stylesheet" href="./styles/stylemain.css">
+    <link type="text/css" rel="stylesheet" href="./styles/navSearchStyle.css">
 
 </head>
 
@@ -50,25 +52,25 @@
     <!-- the body of your page goes here -->
     <!-- stuff -->
     <div class="container">
-        <h1><span id="hikeName">this hike</span></h1>
+        <h1><span id="stopName">this stop</span></h1>
+        <div class = "bookmarkStop"><i class="material-icons">bookmark_border</i></div>
         <div class="position-relative">
-            <img class="hike-img responsive" src="" alt="Hike photo">
             <button class="btn btn-primary position-absolute bottom-0 end-0 m-3"
-                onclick="saveHikeDocumentIDAndRedirect()">Write Review</button>
+                onclick="saveStopDocumentIDAndRedirect()">Post Update</button>
         </div>
     </div>
 
     <div class="container">
-        <h2>Reviews:</h2>
+        <h2>Updates:</h2>
         <div id="details-go-here"></div>
         <!-- Here is container for cards  -->
         <div class="container">
-            <div id="reviewCardGroup" class="row row-cols-auto">
+            <div id="updateCardGroup" class="row row-cols-auto">
             </div>
         </div>
     </div>
 
-    <template id="reviewCardTemplate">
+    <template id="updateCardTemplate">
         <div class="card bg-secondary">
             <img class="card-img-top">
             <div class="card-body bg-light">
@@ -89,7 +91,7 @@
     <!---------------------------------------------->
     <script src="./scripts/firebaseAPI_TEAM09.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/eachHike.js"></script>
+    <script src="./scripts/eachStop.js"></script>
 
 </body>
 
