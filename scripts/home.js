@@ -1,8 +1,33 @@
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    populateStops(user);
-  }
-});
+//Global variable pointing to the current user's Firestore document
+var currentUser;
+
+//Function that calls everything needed for the main page  
+function doAll() {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      currentUser = db.collection("users").doc(user.uid); //global
+      console.log(currentUser);
+
+      insertNameFromFirestore();
+      populateStops(user);
+    } else {
+      // No user is signed in.
+      console.log("No user is signed in");
+      window.location.href = "login.html";
+    }
+  });
+}
+doAll();
+
+// Insert name function using the global variable "currentUser"
+function insertNameFromFirestore() {
+  currentUser.get().then(userDoc => {
+      //get the user name
+      var user_Name = userDoc.data().name;
+      console.log(user_Name);
+      $("#name-goes-here").text(user_Name); //jquery
+  })
+}
 
 function populateStops(user) {
   db.collection("users").doc(user.uid).get()
@@ -31,13 +56,14 @@ function populateStops(user) {
                 console.log(time);
       
                 let updateCard = savedCardTemplate.content.cloneNode(true);
+                updateCard.querySelector('.page-link').href = "eachStop.html?docID=" + stopID;;
                 updateCard.querySelector('.title').innerHTML = stopName;
                 updateCard.querySelector('.time').innerHTML = new Date(time).toLocaleString();
                 updateCard.querySelector('.image').src = image;
                 updateCard.querySelector('.description').innerHTML = `Description: ${description}`;
 
                 // Prepend adds each card as the first child.
-                savedCardGroup.prepend(updateCard);
+                savedCardGroup.append(updateCard);
               })
             })
         });

@@ -52,16 +52,16 @@
     <!-- the body of your page goes here -->
     <!-- stuff -->
     <div class="container">
-        <h1><span id="stopName">this stop</span></h1>
+        <div id="stopName"><h1>this stop</h1></div>
         <div class = "bookmarkStop"><i class="material-icons">bookmark_border</i></div>
-        <div class="position-relative">
+        <div class="position-relative" id="uploadPostBtn">
             <button class="btn btn-primary position-absolute bottom-0 end-0 m-3"
                 onclick="saveStopDocumentIDAndRedirect()">Post Update</button>
         </div>
     </div>
 
     <div class="container">
-        <h2>Updates:</h2>
+        <h1>Updates:</h1>
         <div id="details-go-here"></div>
         <!-- Here is container for cards  -->
         <div class="container">
@@ -71,6 +71,7 @@
     </div>
 
     <template id="updateCardTemplate">
+        <div id="eachCard">
         <div class="card bg-secondary">
             <img class="card-img-top">
             <div class="card-body bg-light">
@@ -81,6 +82,7 @@
                 </p>
             </div>
         </div>
+    </div>
     </template>
 
     <!-- our own footer goes here-->

@@ -1,15 +1,58 @@
-.modal-body {
-    padding-bottom: 150%;
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+body {
+    display: none;
+    animation: 2s ease-in-out 0s 1 fadeIn;
+    background-color: #424242;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+
+    margin: 0;
 }
+
+.container>div {
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-body {
+    padding-bottom: 60em;
+    justify-content: center !important;
+    height: 1px !important;
+}
+
+#searchModal .modal-body {
+    padding-bottom: 60em !important;
+}
+
+#updateModal .modal-body {
+    padding-bottom: 44em;
+}
+
+.modal-content {
+    max-width: 100vmax;
+}
+
+.modal {
+    max-width: 100vmax;
+}
+
+#submitUploadBtn {
+    position: relative;
+    top: -60px;
+    width: 100%;
+}
+
 
 .content {
     padding: 20px;
-}
-
-.content img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
 }
 
 .card-header {
@@ -24,21 +67,358 @@
     margin-right: 12px;
 }
 
-.bg-info {
-    background-color: lightskyblue !important;     /* some secondary colour */
+.navbar {
+    background-color: #76bc98 !important;
+    /* some secondary colour */
 }
 
 #footerPlaceholder {
     margin-top: 200px;
 }
 
+#navbarPlaceholder {
+    margin-top: 10vmax;
+}
+
 .navbar-light .navbar-brand {
     color: #3B413C;
 }
 
-.navbar-brand{
+.py-3 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.navbar-brand {
     font-family: sans-serif;
     font-size: 2rem;
+    font-weight: lighter;
     margin-left: 1em;
 }
 
+h2,
+p {
+    color: #be2a59;
+}
+
+.description {
+    color: #3B413C;
+    font-weight: lighter;
+    margin-top: 2%;
+}
+
+.card-body {
+    background-color: white !important;
+    border-color: white;
+    border-radius: 10%;
+    margin: 0%;
+    margin-bottom: 15%;
+}
+
+.card {
+    background-color: white !important;
+    border-color: none;
+    border-radius: 10%;
+
+}
+
+button:not(.btn-link, .btn-close, .navbar-toggler) {
+    margin-bottom: 5%;
+    background-color: #be2a59 !important;
+    /* Green */
+    border: none;
+    color: white;
+    transition: .2s ease-in-out;
+}
+
+button:hover:not(.btn-link, .btn-close, .navbar-toggler) {
+    margin-bottom: 5%;
+    background-color: goldenrod !important;
+    /* Green */
+    border: none;
+    color: white;
+    transform: scale(1.1);
+    transition: .2s ease-in-out;
+}
+
+#description, #description-foot {
+    margin-top: 5%;
+}
+
+.mypic-input, .mypic-input-foot {
+    margin-bottom: 5%;
+}
+
+.mypic-goes-here-foot {
+    height: 380px;
+}
+
+.mypic-goes-here {
+    width: 380px;
+}
+
+#thanksForUpload {
+    margin: 0;
+    width: 500px;
+    height: auto;
+    position: fixed;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#thanksForUpload .btn-primary {
+    background-color: #be2a59;
+    border: none;
+    transition: .2s ease-in-out;
+    margin-top: 30px;
+}
+
+#thanksForUpload .btn-primary:hover {
+    background-color: goldenrod;
+    border: none;
+    transform: scale(1.1);
+    transition: .2s ease-in-out;
+}
+
+#eachCard,
+a.page-link {
+    background-color: #be2a59;
+    border-color: goldenrod;
+    border-radius: 10%;
+    border-style: none;
+    display: block;
+    border-style: none;
+    margin: 3vmax;
+    max-width: 80vmin;
+    height: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    filter: drop-shadow(0px 15px 7px black);
+    transition: .2s ease-in-out;
+}
+
+#eachCard {
+    padding-top: 1%;
+}
+
+a.page-link:hover {
+    background-color: goldenrod;
+    border-color: goldenrod;
+    transform: scale(1.1);
+    transition: .2s ease-in-out;
+}
+
+.navbar-brand {
+    margin-right: 5vmax;
+}
+
+.nav-link {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+a.nav-link {
+    transition: .2s ease-in-out;
+}
+
+a.nav-link:hover {
+    color: goldenrod !important;
+    transition: .2s ease-in-out;
+}
+
+#updateCardGroup,
+#savedCardGroup {
+    justify-content: center;
+}
+
+
+
+#stopCardGroup .card {
+    width: 100vmax !important;
+    height: 15vmax;
+    margin-top: 3vmax;
+    margin-bottom: 5vmin;
+    background-color: transparent !important;
+    border-radius: 0;
+    border: none !important;
+    filter: drop-shadow(0px 10px 7px black);
+}
+
+#stopCardGroup .card-body {
+    border-radius: 0;
+    border: none !important;
+}
+
+#stopCardGroup .card-body {
+    transition: .2s ease-in-out;
+}
+
+#stopCardGroup .card-body:hover {
+    transform: scale(1.1);
+    transition: .2s ease-in-out;
+}
+
+#stopCardGroup h5 {
+    color: #3B413C;
+    font-size: 2vmax;
+}
+
+#searchModal {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#updateModal {
+    margin: 0;
+    height: 100%;
+    position: fixed;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.result-item {
+    color: #3B413C;
+    text-decoration: none !important;
+    position: relative;
+    top: -8vmax;
+    transition: .2s ease-in-out;
+}
+
+.result-item:hover {
+    color: #be2a59;
+    transition: .2s ease-in-out;
+}
+
+p.time {
+    font-size: 2.5vmin;
+    font-weight: lighter;
+}
+
+h2 {
+    text-shadow: 0px 2px 5px rgba(46, 91, 173, 0.6);
+    font-family: arial;
+    font-weight: bolder;
+    font-size: 3vmin;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+p.time, h2.title {
+    padding-left: 1em;
+}
+
+.navbar img {
+    max-width: 5vmin;
+    min-width: 5vmax;
+    max-height: auto;
+}
+
+a.navbar-brand {
+    min-width: 10%;
+    max-width: 50%;
+}
+
+p {
+    font-family: arial;
+    font-weight: bolder;
+}
+
+p.card-text.description {
+    font-size: 0.1vmin 3vmax;
+}
+
+h1 {
+    color: white;
+    font-family: arial;
+    font-weight: bolder;
+    text-shadow: 0px 6.5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.container {
+    color: white;
+}
+
+.display-5 {
+    font-family: arial;
+    font-weight: bolder;
+    margin-top: 1vmax;
+}
+
+#stopName {
+    font-size: 4vmax;
+    font-weight: bolder;
+    margin-top: 5vmax;
+    width: 65%;
+    filter: drop-shadow(0px 5px 7px black);
+}
+
+.bookmarkStop i {
+    color: goldenrod;
+}
+
+#uploadPostBtn {
+    position: relative;
+    top: 20px;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .page-link {
+        width: 37% !important;
+        height: auto;
+    }
+
+    p.time {
+        font-size: 2vmin;
+        font-weight: lighter;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    #stopCardGroup .card {
+        margin-top: 7vmax;
+        margin-bottom: 20vmax !important;
+    }
+
+    #eachCard,
+    a.page-link {
+        padding-top: 2.5%;
+        padding-bottom: 2.5%;
+    }
+
+
+    .savedStopsHead {
+        margin-top: 16vmax;
+    }
+
+
+    #stopName {
+        font-size: 5vmax;
+        font-weight: bolder;
+        margin-top: 15vmax;
+        width: 65%;
+        filter: drop-shadow(0px 5px 7px black);
+    }
+
+    h2 {
+        font-size: 4vmax;
+    }
+
+    p.time, h2.title {
+        padding-left: 0;
+    }
+}

@@ -1,3 +1,4 @@
+// update function when user is on landing page for a stop.
 var stopDocID = localStorage.getItem("stopDocID");
 
 console.log(stopDocID);
@@ -8,7 +9,7 @@ function getStopName(id) {
     .get()
     .then((thisStop) => {
       var stopName = thisStop.data().name;
-      document.getElementById("stopName").innerHTML = stopName;
+      document.querySelector(".stopName").innerHTML = stopName;
     });
 }
 
@@ -18,8 +19,8 @@ getStopName(stopDocID);
 // var imageFile;
 
 // listen for file selection
-var fileInput = document.getElementById("mypic-input"); // pointer #1
-const image = document.getElementById("mypic-goes-here"); // pointer #2
+var fileInput = document.querySelector(".mypic-input"); // pointer #1
+const image = document.querySelector(".mypic-goes-here"); // pointer #2
 
 // When a change happens to the File Chooser Input
 fileInput.addEventListener("change", function (e) {
@@ -30,7 +31,7 @@ fileInput.addEventListener("change", function (e) {
 
 function postUpdate() {
   console.log("inside post update");
-  let Description = document.getElementById("description").value;
+  let Description = document.querySelector(".caption").value;
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -77,6 +78,7 @@ function postUpdate() {
           });
         });
       });
+
     } else {
       console.log("No user is signed in");
       window.location.href = "update.html";

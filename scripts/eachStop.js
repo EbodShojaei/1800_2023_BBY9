@@ -69,19 +69,44 @@ populateUpdates();
 let params = new URL(window.location.href) //get the url from the search bar
 let stopID = params.searchParams.get("docID");
 
-function saveBookmark(stopID) {
-    currentUser.set({
-        bookmarks: firebase.firestore.FieldValue.arrayUnion(stopID)
-    }, {
-        merge: true
-    })
-        .then(function () {
-            console.log("bookmark has been saved for: " + currentUser);
-            var iconID = 'save-' + stopID;
-            //console.log(iconID);
-            //this is to change the icon of the stop that was saved to "filled"
-            document.getElementById(iconID).innerText = 'bookmark';
-        });
+function updateBookmark(id) {
+    currentUser.get().then((userDoc) => {
+        let bookmarksNow = userDoc.data().bookmarks;
+        // console.log(bookmarksNow)
+
+        // Check if bookmarksNow is defined and if this bookmark already exists in Firestore
+        if (bookmarksNow && bookmarksNow.includes(id)) {
+            console.log(id);
+            // If it does exist, then remove it
+            currentUser
+                .update({
+                    bookmarks: firebase.firestore.FieldValue.arrayRemove(id),
+                })
+                .then(function () {
+                    console.log("This bookmark is removed for" + currentUser);
+                    var iconID = "save-" + id;
+                    console.log(iconID);
+                    document.getElementById(iconID).innerText = "bookmark_border";
+                });
+        } else {
+            // If it does not exist, then add it
+            currentUser
+                .set(
+                    {
+                        bookmarks: firebase.firestore.FieldValue.arrayUnion(id),
+                    },
+                    {
+                        merge: true,
+                    }
+                )
+                .then(function () {
+                    console.log("This bookmark is for" + currentUser);
+                    var iconID = "save-" + id;
+                    console.log(iconID);
+                    document.getElementById(iconID).innerText = "bookmark";
+                });
+        }
+    });
 }
 
 //NEW LINES: next 2 lines are new for demo#11
@@ -89,7 +114,7 @@ function saveBookmark(stopID) {
 //so later we know which stop to bookmark based on which stop was clicked
 document.querySelector('.bookmarkStop').querySelector('i').id = 'save-' + stopID;
 // this line will call a function to save the stops to the user's document             
-document.querySelector('.bookmarkStop').querySelector('i').onclick = () => saveBookmark(stopID);
+document.querySelector('.bookmarkStop').querySelector('i').onclick = () => updateBookmark(stopID);
 
 firebase.auth().onAuthStateChanged(user => {
     if (user) {

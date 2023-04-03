@@ -1,6 +1,6 @@
 <!-- search modal -->
-<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="searchLabel">Search Routes</h5>
@@ -25,8 +25,8 @@
 </div>
 
 <!-- update modal -->
-<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="updateLabel">Post Update</h5>
@@ -35,32 +35,35 @@
             <div class="modal-body">
                 <div class="container">
                     <div class="dropdown">
-                        <button onclick="toggleSearch()" class="dropbtn">Dropdown</button>
+                        <button onclick="toggleSearch()" class="stopName btn btn-secondary"
+                            type="button" id="searchbtn">Transit Stops
+                        </button>
                         <div id="searchDropdown" class="dropdown-content">
-                          <input type="text" placeholder="search..." class="input">
-                          <div class="results-container">
-                            <ul class="results-list" id="updateList">
-    
-                            </ul>
+                            <input id="searchDropdown" type="text" class="inputDropdown" placeholder="&emsp;search..." autocomplete="off">
+                            <div class="results-container">
+                                <ul class="results-list" id="updateList">
+
+                                </ul>
+                            </div>
+
                         </div>
-                          
-                        </div>
-                      </div> 
+                    </div>
                     <form>
                         <!-- Container for uploading a photo -->
                         <div class="container py-3">
-                            <input type="file" id="mypic-input" accept="image/*" />
-                            <img id="mypic-goes-here" width=100 height=100 />
+                            <input type="file" class="mypic-input-foot" accept="image/*" />
+                            <img class="mypic-goes-here-foot" width=100 height=100 />
                         </div>
-                            <div class="form-group">
-                                <textarea class="form-control" id="description" rows="3"></textarea>
-                            </div>
-                            <br>
-                            <br>     
-                            <br>
-                            <div class="d-flex justify-content-end">
-                                <button type="button" class="btn btn-lg btn-primary pull-right" onclick="postUpdate()">Submit</button>
-                            </div>
+                        <div class="form-group">
+                            <textarea class="caption form-control" id="description-foot" rows="3"></textarea>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-lg btn-primary pull-right" id="submitUploadBtn"
+                                onclick="postUpdate()">Submit</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -70,18 +73,24 @@
 
 <footer class="navbar justify-content-evenly bg-info fixed-bottom">
     <div class="container py-3">
-        <a class="nav-link" href="../home.html"><i class="material-icons">home</i></a> <!-- icon to view homefeed -->
+        <!-- icon to view homefeed -->
+        <a class="nav-link" href="../home.html"><i class="material-icons">home</i></a>
 
         <!-- click search icon to initialize modal box  -->
         <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#searchModal">
             <i class="material-icons">search</i> <!-- icon to prompt search -->
         </button>
 
-        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#updateModal">
-            <i class="material-icons">library_add</i> <!-- icon to upload post -->
+        <!-- icon to upload post -->
+        <button type="button" class="btn btn-link" id="uploadPost" data-bs-toggle="modal" data-bs-target="#updateModal">
+            <i class="material-icons">library_add</i>
         </button>
-        <a class="nav-link" href="../saved.html"><i class="material-icons">favorite</i></a> <!-- icon to view favorites -->
+        <!-- icon to view favorites -->
+        <a class="nav-link" href="../saved.html"><i class="material-icons">favorite</i></a>
     </div>
 </footer>
 
 <script src="./scripts/search.js"></script>
+<!-- <script src="./scripts/update.js"></script> -->
+<script src="./scripts/footUpdate.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

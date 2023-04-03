@@ -19,3 +19,13 @@ function loadSkeleton() {
     });
 }
 loadSkeleton(); //invoke the function
+
+$(function(){
+    $('body').fadeIn();
+    $('a').click(function(){
+        url = $(this).attr('id') + '.html';
+        $('body').fadeOut(function(){
+            window.location = url;
+        });     
+    });
+});

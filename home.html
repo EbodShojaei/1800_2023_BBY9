@@ -51,8 +51,17 @@
 
     <!-- the body of your page goes here -->
     <!-- stuff -->
+    <div class="container-fluid text-dark p-3">
+        <div class="container p-2.5">
+            <h1 class="display-5">
+                Welcome back, <span id="name-goes-here">Name</span>
+            </h1>
+            <hr />
+        </div>
+    </div>
+    
     <div class="container">
-        <h1>Updates:</h1>
+        <h1>&emsp;Updates:</h1>
         <div id="details-go-here"></div>
         <!-- Here is container for cards  -->
         <div class="container">
@@ -62,6 +71,7 @@
     </div>
 
     <template id="savedCardTemplate">
+        <a class="page-link" href ="">
         <div class="card bg-secondary">
             <img class="card-img-top">
             <div class="card-body bg-light">
@@ -73,6 +83,7 @@
                 </p>
             </div>
         </div>
+    </a>
     </template>    
 
     <!-- our own footer goes here-->
