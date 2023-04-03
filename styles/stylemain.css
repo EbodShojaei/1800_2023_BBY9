@@ -238,12 +238,16 @@ a.nav-link:hover {
 #stopCardGroup .card {
     width: 100vmax !important;
     height: 15vmax;
-    margin-top: 3vmax;
-    margin-bottom: 5vmin;
+    margin-top: 1em;
+    margin-bottom: 1em;
     background-color: transparent !important;
     border-radius: 0;
     border: none !important;
     filter: drop-shadow(0px 10px 7px black);
+}
+
+#stopCardGroup div {
+    margin-bottom: 0;
 }
 
 #stopCardGroup .card-body {
@@ -374,8 +378,14 @@ h1 {
     top: 20px;
 }
 
+@media only screen and (max-width: 1280px) {
+    #stopCardGroup .card {
+        margin-top: 7vmax;
+        margin-bottom: 5vmax !important;
+    }
+}
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 719px) {
     .page-link {
         width: 37% !important;
         height: auto;
@@ -391,7 +401,7 @@ h1 {
 @media only screen and (max-width: 767px) {
     #stopCardGroup .card {
         margin-top: 7vmax;
-        margin-bottom: 20vmax !important;
+        margin-bottom: 18vmax !important;
     }
 
     #eachCard,
@@ -412,6 +422,10 @@ h1 {
         margin-top: 15vmax;
         width: 65%;
         filter: drop-shadow(0px 5px 7px black);
+    }
+
+    h5.card-title {
+        font-size: 4vmax !important;
     }
 
     h2 {

@@ -155,5 +155,5 @@ dropdownInput.addEventListener("input", (e) => {
 
 // when the upload icon is selected, innerHTML of searchbtn reset to "Transit Stops"
 document.querySelector('#uploadPost').addEventListener('click', (e) => {
-    document.querySelector('#searchbtn').innerHTML = "Transit Stops";
+    document.querySelector('#searchbtn').innerHTML = "Transit Stops ▼";
 });

@@ -46,9 +46,10 @@ function listenForBookmarkedHikeChanges() {
                     let updateTimestamp = updateData.timestamp;
   
                     if ((((Date.now() / 1000) - updateTimestamp.seconds) < 2) ) {
-                      alert(`New update for stop "${hikeName}" added!`);
+                      swal("New Update!", `See status in "${hikeName}"`, "info");
+                      // alert(`New update for stop "${hikeName}" added!`);
                       lastUpdateTimestamp = true; //updateTimestamp;
-                      console.log(updateTimestamp);
+                      console.log(updateTimestamp.seconds);
                       console.log(Date.now()/1000);
                       return;
                     }
