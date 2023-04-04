@@ -17,6 +17,8 @@ body {
     margin: 0;
 }
 
+
+
 .container>div {
     align-items: center;
     justify-content: center;
@@ -270,8 +272,10 @@ a.nav-link:hover {
 }
 
 #searchModal {
+    padding-right: 0 !important;
     margin: 0;
     height: 100%;
+    width: 100%;
     overflow: hidden;
     position: fixed;
     left: 50%;
@@ -288,6 +292,20 @@ a.nav-link:hover {
     right: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+#searchDropdown, #searchDropdown a {
+    font-size: 1.2vmax;
+}
+
+#searchDropdown {
+    width: 29vmax;
+}
+
+#searchDropdown input {
+    position: relative;
+    left: 10px;
+    width: 27.5vmax;
 }
 
 .result-item {
@@ -383,9 +401,24 @@ h1 {
         margin-top: 7vmax;
         margin-bottom: 5vmax !important;
     }
+
+    #searchDropdown, #searchDropdown a {
+        font-size: 1.7vmax;
+    }
+
+    #searchDropdown {
+        width: 35vmax;
+    }
+    
+    #searchDropdown input {
+        position: relative;
+        left: 10px;
+        width: 32vmax;
+    }
 }
 
 @media only screen and (min-width: 719px) {
+    
     /* .page-link {
         width: 37% !important;
         height: auto;
@@ -399,6 +432,22 @@ h1 {
 
 
 @media only screen and (max-width: 767px) {
+
+    #searchDropdown, #searchDropdown a {
+        font-size: 1.7vmax;
+    }
+
+    #searchDropdown {
+        width: 35vmax;
+    }
+    
+    #searchDropdown input {
+        position: relative;
+        left: 10px;
+        width: 32vmax;
+    }
+
+
     #stopCardGroup .card {
         margin-top: 7vmax;
         margin-bottom: 18vmax !important;

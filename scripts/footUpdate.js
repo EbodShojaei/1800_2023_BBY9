@@ -2,16 +2,16 @@
 
 // listen for file selection
 var fileInput = document.querySelector(".mypic-input-foot"); // pointer #1
-const image = document.querySelector(".mypic-goes-here-foot"); // pointer #2
+const dropdownImage = document.querySelector(".mypic-goes-here-foot"); // pointer #2
 
 // When a change happens to the File Chooser Input
 fileInput.addEventListener("change", function (e) {
   imageFile = e.target.files[0]; //Global variable
   var imageURL = URL.createObjectURL(imageFile);
-  image.src = imageURL; // Display this image
+  dropdownImage.src = imageURL; // Display this image
 });
 
-function postUpdate() {
+function postDropdownUpdate() {
     console.log("inside post update");
     let Description = document.getElementById("description-foot").value;
   
@@ -65,6 +65,10 @@ function postUpdate() {
                       }).then(() => {
                         swal("Success", "Post uploaded!", "success");
                         document.querySelector("#uploadPost").click();
+                        document.querySelector(".mypic-goes-here-foot").removeAttribute('src', '');
+                        Description = "";
+                        document.getElementById("description-foot").value = Description;
+
                       });
                     });
                 });

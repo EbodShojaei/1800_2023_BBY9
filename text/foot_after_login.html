@@ -52,7 +52,7 @@
                         <!-- Container for uploading a photo -->
                         <div class="container py-3">
                             <input type="file" class="mypic-input-foot" accept="image/*" />
-                            <img class="mypic-goes-here-foot" width=100 height=100 />
+                            <img class="mypic-goes-here-foot" width=100 height=100 onerror="this.style.display='none'" />
                         </div>
                         <div class="form-group">
                             <textarea class="caption form-control" id="description-foot" rows="3"></textarea>
@@ -62,7 +62,7 @@
                         <br>
                         <div class="d-flex justify-content-end">
                             <button type="button" class="btn btn-lg btn-primary pull-right" id="submitUploadBtn"
-                                onclick="postUpdate()">Submit</button>
+                                onclick="postDropdownUpdate()">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -93,4 +93,4 @@
 <script src="./scripts/search.js"></script>
 <!-- <script src="./scripts/update.js"></script> -->
 <script src="./scripts/footUpdate.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
