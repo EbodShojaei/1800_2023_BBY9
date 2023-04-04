@@ -386,10 +386,10 @@ h1 {
 }
 
 @media only screen and (min-width: 719px) {
-    .page-link {
+    /* .page-link {
         width: 37% !important;
         height: auto;
-    }
+    } */
 
     p.time {
         font-size: 2vmin;
