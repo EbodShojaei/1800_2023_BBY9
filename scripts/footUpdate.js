@@ -1,4 +1,10 @@
 // Update function for the bottom navbar.
+Description = "";
+emptyIMG = '//:0'
+document.querySelector("#uploadPost").addEventListener("click", function (e) {
+  document.querySelector(".mypic-goes-here-foot").src = emptyIMG;
+  document.getElementById("description-foot").value = Description;
+});
 
 // listen for file selection
 var fileInput = document.querySelector(".mypic-input-foot"); // pointer #1
@@ -65,10 +71,6 @@ function postDropdownUpdate() {
                       }).then(() => {
                         swal("Success", "Post uploaded!", "success");
                         document.querySelector("#uploadPost").click();
-                        document.querySelector(".mypic-goes-here-foot").removeAttribute('src', '');
-                        Description = "";
-                        document.getElementById("description-foot").value = Description;
-
                       });
                     });
                 });
